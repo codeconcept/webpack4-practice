@@ -6,7 +6,7 @@ module.exports = {
   entry: './src/index.js',
   output: {
     path: path.resolve(__dirname, 'dist'),
-    filename: 'bundle.js'
+    filename: '[chunkhash].js'
   },
   module: {
     rules: [
@@ -24,7 +24,6 @@ module.exports = {
   plugins: [
     new webpack.ProgressPlugin(),
     new HtmlWebpackPlugin({
-      hash: true,
       title : 'Webpack 4',
       template : './src/index.html'
     })
