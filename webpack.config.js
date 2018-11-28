@@ -3,10 +3,13 @@ const webpack = require('webpack');
 const HtmlWebpackPlugin = require("html-webpack-plugin");
 
 module.exports = {
-  entry: './src/index.js',
+  entry: {
+    index: './src/index.js',
+    technos: './src/technos.js',
+  },
   output: {
     path: path.resolve(__dirname, 'dist'),
-    filename: '[chunkhash].js'
+    filename: '[name].bundle.js',
   },
   module: {
     rules: [
